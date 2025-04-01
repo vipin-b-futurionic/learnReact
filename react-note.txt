@@ -1,0 +1,95 @@
+103 to 105 lft
+
+120 se below need to done 
+
+tick tak toe project, 
+client api ,  server api
+vipin_b_futurionic - git hub
+
+
+---------------------------------------------------
+
+import React, { useState, useEffect, useActionState } from "react";
+
+
+const Card = ({title}) => {
+  const [count, setCount] = useState(0);
+  const [hasLiked, setHasLiked] = useState(false);
+  useEffect( () =>{
+    console.log('${title} has been liked: ${hasLiked}');
+  }, [hasLiked]
+
+  );
+  return (
+    <div className="card" onClick = {() => setCount(count+1)}>
+      <h2> {title} <br /> {count || null} </h2>
+
+      <button onClick={() => setHasLiked(!hasLiked)}>
+      {hasLiked ? 'Liked' : 'Like'}
+      </button>
+    </div>
+  )
+}
+
+export const App = () => {
+  
+  return (
+    <div className = "card-container">
+  
+    <Card title = "Star War" rating = {5} isCool = {true}/>
+    <Card title = "Avatar" />
+    <Card title = "The Lion Raja" />
+
+    </div>
+  )
+}
+------------------------------------------------------
+CSS----- for above
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 40px;
+  background-color: rgb(177, 247, 247);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+ color: rgb(48, 21, 21);
+ text-align: center;
+ margin-bottom: 30px;
+ font-size: 48px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 2px solid red;
+  border: 1px solidrgb(80, 132, 228);
+  padding: 20px;
+  margin: 10px;
+  background-color: #c0c0c0;
+  border-radius: 10px;
+  min-height: 100px;
+
+}
+
+button {
+  order: none;
+  font-size: 30px;
+  background-color: transparent;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}
